@@ -1,0 +1,22 @@
+#
+#Mon Mar 16 10:50:24 CST 2009
+genBasicCompId=false
+sessionFactoryName=bnnt.HibernateSessionFactory
+profile=
+daoSFId=
+version=3.1
+jndiPath=
+detectM2M=false
+reStrategyClass=
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=WebRoot/WEB-INF/lib
+addLibs2Project=false
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+reSettingsFile=/bnnt/hibernate.reveng.xml
+configFile=/eznewsweb/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=false
