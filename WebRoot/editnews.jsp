@@ -4,7 +4,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-	<title>WIT-NCM</title></head>
+	<title>WIT-NCM</title>
+	
+<script type="text/javascript" src="./jquery/jquery.js"></script>
+<!-- WYMeditor main JS file, minified version -->
+<script type="text/javascript" src="./wymeditor/jquery.wymeditor.min.js"></script>
+
+<script type="text/javascript">
+
+/* Here we replace each element with class 'wymeditor'
+ * (typically textareas) by a WYMeditor instance.
+ * 
+ * We could use the 'html' option, to initialize the editor's content.
+ * If this option isn't set, the content is retrieved from
+ * the element being replaced.
+ */
+
+jQuery(function() {
+    jQuery('.wymeditor').wymeditor();
+});
+
+</script>
+	
+	
+</head>
 <body>
 <%
 	String str;
@@ -74,18 +97,12 @@
   </tr>
   <tr>
     <td height="30">新闻内容</td>
-    <td height="30"><textarea name="tfmain" style="display:none">
-	<%=(new NewsText().edesortString(str))
-	//String news_str =(new NewsText().edesortString(str));
-	//news_str = news_str.replaceAll("<","&lt;");
-	//news_str = news_str.replaceAll(">","&gt;");
-	//news_str = news_str.replaceAll("&nbsp;"," ");
-	//out.println(news_str);
-	%>
+   <td height="30">
+    <textarea name="tfmain" class="wymeditor">
+    <%=(new NewsText().edesortString(str))%>
     </textarea>
-    <iframe ID="Editor" name="Editor" src="./HtmlEditor/index.html?ID=tfmain" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no" style="height:220px;width:650px"></iframe>
     </td>
-  </tr>
+  </tr> 
   <tr>
     <td rowspan="5">修改图片</td>
     <td height="30">第一张图片：<input type="file" name="fimg" />
@@ -96,15 +113,15 @@
   </tr>
   <tr>
     <td height="30">第二张图片：<input type="file" name="fimga1" />
-      <input name="imgdrv2" type="text" id="imgdrv2" value="/servlet/GetAimg1?tfimgid=<%=sn%>" size="30" /></td>
+      <input name="imgdrv2" type="text" id="imgdrv2" value="./servlet/GetAimg1?tfimgid=<%=sn%>" size="30" /></td>
   </tr>
   <tr>
     <td height="30">第三张图片：<input type="file" name="fimga2" />
-      <input name="imgdrv3" type="text" id="imgdrv3" value="/servlet/GetAimg2?tfimgid=<%=sn%>" size="30" /></td>
+      <input name="imgdrv3" type="text" id="imgdrv3" value="./servlet/GetAimg2?tfimgid=<%=sn%>" size="30" /></td>
   </tr>
   <tr>
     <td height="30">第四张图片：<input type="file" name="fimga3" />
-      <input name="imgdrv4" type="text" id="imgdrv4" value="/servlet/GetAimg3?tfimgid=<%=sn%>" size="30" /></td>
+      <input name="imgdrv4" type="text" id="imgdrv4" value="./servlet/GetAimg3?tfimgid=<%=sn%>" size="30" /></td>
   </tr>
   <tr>
     <td height="30">范围</td>
@@ -117,7 +134,7 @@
   </tr>
   <tr>
     <td height="30"><label>
-      <input type="submit" name="Submit" value="编辑新闻" />
+      <input type="submit" name="Submit" class="wymupdate" alue="编辑新闻" />
     </label>
 	</td>
     <td height="30">&nbsp;</td>
