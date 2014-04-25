@@ -74,7 +74,7 @@ jQuery(function() {
   <tr>
     <td height="30">пбнедзхщ</td>
     <td height="30">
-    <textarea name="tfmain" class="wymeditor"></textarea>
+    <textarea name="tfmain" class="wymeditor" width="500"></textarea>
     </td>
   </tr>
   <tr>

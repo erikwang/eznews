@@ -16,7 +16,6 @@ public class GetNews {
 	public List<Object> getNewsList(String condition){
 		Configuration config1;
         try {
-	    		System.out.println("!!!!!!!!!!!!!!");
         		config1 = new Configuration().configure();
 	    		session = HibernateSessionFactory.getSession();
 	    		//newslist = session.createQuery("FROM Tdnews "+condition).list();
