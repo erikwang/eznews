@@ -41,7 +41,7 @@ public class UploadFileServlet extends HttpServlet {
 	int imgsizemax = 2000000;
 	String fileName="";
 	//String prefix = "C:\\jakarta-tomcat-5.0.28\\webapps\\bnnt\\upload\\";
-	String prefix = "/usr/local/eznews/jakarta-tomcat-5.0.28/webapps/eznews/upload/";
+	//String prefix = "/usr/local/eznews/jakarta-tomcat-5.0.28/webapps/eznews/upload/";
 	private java.util.Date date= new java.util.Date();
 	
 	public UploadFileServlet() {
@@ -98,7 +98,11 @@ public class UploadFileServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		//String prefix = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+basepath+"/";
+		String prefix = getServletContext().getRealPath("/upload/")+"\\"; // the physical directory of web application server is
+		//System.out.println("Upload path = "+ prefix);
+		
 	
 		try{	
 			boolean isMultipart = ServletFileUpload.isMultipartContent(request);

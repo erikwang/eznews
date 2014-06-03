@@ -34,6 +34,10 @@
 			</div>				
 		  <div class="left_articles">
 	<%
+	if(nl1 == null){
+		out.println("No upload files found.");
+		return;
+	}
 	out.println("<table width='100%' cellspacing='10'>");
 	out.println("<tr>");
   	out.println("<td>"+"文件说明"+"</td>");

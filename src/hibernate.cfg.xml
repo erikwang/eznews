@@ -10,15 +10,18 @@
 	<property name="myeclipse.connection.profile">
 		mysql_eznews
 	</property>
-	<property name="hibernate.connection.datasource">eznews_local</property>
+	<property name="hibernate.connection.datasource">eznews_local</property>	
+	
 	<mapping resource="eznews/Tdnews.hbm.xml" />
 	<mapping resource="eznews/Tdaddonimgs.hbm.xml" />
+	<mapping resource="eznews/Tdfiles.hbm.xml" />
 </session-factory>
 </hibernate-configuration>
 
 
 <!--  
 
+Replace following lines if don't use JNDI data source
 <property name="connection.url">
 		jdbc:mysql://localhost:3306/eznews
 	</property>
@@ -28,4 +31,5 @@
 	<property name="connection.driver_class">
 		com.mysql.jdbc.Driver
 	</property>
+	
  -->
